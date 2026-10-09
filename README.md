@@ -1,113 +1,77 @@
-# Vanilla App Template
+# WatchCharm
 
-Цей проект було створено за допомогою Vite. Для знайомства та налаштування
-додаткових можливостей [звернись до документації](https://vitejs.dev/).
+A team frontend project: a responsive watch-brand landing page built with HTML and CSS. It presents the brand, product collections, a featured offer, customer reviews and a contact section.
 
-## Створення репозиторію за шаблоном
+[Team demo](https://nastjademchyk.github.io/WatchCharm-team-project/)
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення
-репозиторію свого проекту. Для цього натисни на кнопку `«Use this template»` і
-обери опцію `«Create a new repository»`, як показано на зображенні.
+## Page sections
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+- Header and anchor navigation.
+- Hero section and brand introduction.
+- Product catalog and promotional banner.
+- Featured watch with a sale price and image gallery layout.
+- Customer reviews.
+- Contact form and footer.
 
-На наступному етапі відкриється сторінка створення нового репозиторію. Заповни
-поле його імені, переконайся, що репозиторій публічний, після чого натисни
-кнопку `«Create repository from template»`.
+Responsive images use `picture` and `srcset` with separate mobile, tablet and desktop assets. Section markup and styles are kept in separate files so the team can work on individual parts of the page.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+## Stack
 
-Після того, як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як показано
-на зображенні.
+- HTML5 and CSS3.
+- Vite 4 for development and production builds.
+- `vite-plugin-html-inject` for composing the page from HTML partials.
+- `vite-plugin-full-reload` for refreshing HTML changes.
+- GitHub Actions configuration for publishing the build to GitHub Pages.
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+## Run locally
 
-Проскроливши сторінку до самого кінця, в секції `«Workflow permissions»` обери
-опцію `«Read and write permissions»` і постав галочку в чекбоксі. Це необхідно
-для автоматизації процесу деплою проекту.
+With Node.js and npm installed:
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
-
-Тепер у тебе є особистий репозиторій проекту, зі структурою файлів та папок
-репозиторію-шаблону. Далі працюй з ним, як з будь-яким іншим особистим
-репозиторієм, клонуй його собі на комп'ютер, пиши код, роби коміти та відправляй
-їх на GitHub.
-
-## Підготовка до роботи
-
-1. Переконайся, що на комп'ютері встановлено LTS-версію Node.js.
-   [Скачай та встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встанови базові залежності проекту в терміналі командою `npm install`.
-3. Запусти режим розробки, виконавши в терміналі команду `npm run dev`.
-4. Перейдіть у браузері за адресою
-   [http://localhost:5173](http://localhost:5173). Ця сторінка буде автоматично
-   перезавантажуватись після збереження змін у файли проекту.
-
-## Файли і папки
-
-- Файли розмітки компонентів сторінки повинні лежати в папці `src/partials` та
-  імпортуватись до файлу `index.html`. Наприклад, файл з розміткою хедера
-  `header.html` створюємо у папці `partials` та імпортуємо в `index.html`.
-- Файли стилів повинні лежати в папці `src/css` та імпортуватись до HTML-файлів
-  сторінок. Наприклад, для `index.html` файл стилів називається `index.css`.
-- Зображення додавай до папки `src/img`. Збирач оптимізує їх, але тільки при
-  деплої продакшн версії проекту. Все це відбувається у хмарі, щоб не
-  навантажувати твій комп'ютер, тому що на слабких компʼютерах це може зайняти
-  багато часу.
-
-## Деплой
-
-Продакшн версія проекту буде автоматично збиратися та деплоїтись на GitHub
-Pages, у гілку `gh-pages`, щоразу, коли оновлюється гілка `main`. Наприклад,
-після прямого пуша або прийнятого пул-реквесту. Для цього необхідно у файлі
-`package.json` змінити значення прапора `--base=/<REPO>/`, для команди `build`,
-замінивши `<REPO>` на назву свого репозиторію, та відправити зміни на GitHub.
-
-```json
-"build": "vite build --base=/<REPO>/",
+```sh
+git clone https://github.com/Slavik756/WatchCharm-team-project.git
+cd WatchCharm-team-project
+npm ci
+npm run dev
 ```
 
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) та
-виставити роздачу продакшн версії файлів з папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
+Open the local URL printed by Vite, normally [http://localhost:5173](http://localhost:5173).
 
-![GitHub Pages settings](./assets/repo-settings.png)
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Generate the site in `dist/` |
+| `npm run preview` | Preview the generated build |
 
-### Статус деплою
+The build command uses the base path `/WatchCharm-team-project/`. Use the URL printed by the preview server, including that path.
 
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
+## Structure
 
-- **Жовтий колір** - виконується збірка та деплой проекту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час лінтингу, збірки чи деплою сталася помилка.
+```text
+src/
+├── index.html       # Main page composed from partials
+├── partials/        # Header, hero, catalog, sale, reviews, contact and footer
+├── css/             # Base styles and section styles
+├── images/          # Responsive product images and icons
+├── fonts/           # Local font files and font declarations
+├── public/          # Public assets
+└── main.js          # JavaScript entry point
+vite.config.js
+.github/workflows/deploy.yml
+```
 
-Більш детальну інформацію про статус можна переглянути натиснувши на іконку, і в
-вікні, що випадає, перейти за посиланням `Details`.
+Edit section content in `src/partials/` and its corresponding styles in `src/css/`. Generated files in `dist/` should not be edited.
 
-![Deployment status](./assets/deploy-status.png)
+## Current scope
 
-### Жива сторінка
+This repository demonstrates page layout and responsive asset handling. It is not a complete online store: there is no cart, checkout, payment integration or server-side contact submission.
 
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися за
-адресою, вказаною на вкладці `Settings` > `Pages` в налаштуваннях репозиторію.
-Наприклад, ось посилання на живу версію для цього репозиторію
+The current `src/main.js` is empty. Mobile-menu markup and styles are present, but the open/close buttons are not wired to JavaScript in this version.
 
-[https://goitacademy.github.io/vanilla-app-template/](https://goitacademy.github.io/vanilla-app-template/).
+## Publishing
 
-Якщо відкриється порожня сторінка, переконайся, що у вкладці `Console` немає
-помилок пов'язаних з неправильними шляхами до CSS та JS файлів проекту
-(**404**). Швидше за все у тебе неправильне значення прапора `--base` для
-команди `build` у файлі `package.json`.
+The existing workflow builds on pushes to `main` and publishes `dist/` to the `gh-pages` branch. GitHub Pages must be configured to serve that branch. If the repository name or hosting path changes, update the `--base` value in the build script.
 
-## Як це працює
+## Team context
 
-![How it works](./assets/how-it-works.png)
+WatchCharm was developed as a team project using the GoIT Vite starter. This README describes the repository as a whole; individual contributions are recorded in its commit history.
 
-1. Після кожного пуша у гілку `main` GitHub-репозиторію, запускається
-   спеціальний скрипт (GitHub Action) із файлу `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проект ініціалізується та
-   проходить лінтинг та збірку перед деплоєм.
-3. Якщо всі кроки пройшли успішно, зібрана продакшн версія файлів проекту
-   відправляється у гілку `gh-pages`. В іншому випадку, у лозі виконання скрипта
-   буде вказано в чому проблема.
