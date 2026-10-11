@@ -2,7 +2,7 @@
     <div class="container ">
         <div class="header-box">
             <a class="header-logo" href="./index.html">watchcharm</a>
-            <button class="button-menu-open" type="button">
+            <button class="button-menu-open" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false" aria-haspopup="dialog">
                 <svg class="header-svg" width="28" height="14">
                     <use href="./images/icons.svg#icon-menu-btn">
                     </use>
@@ -43,9 +43,9 @@
         </div>
     </div>
     <!-- mob-window -->
-    <div class="mob-menu">
+    <dialog class="mob-menu" id="mobile-menu" aria-label="Mobile navigation">
         <div class="menu-box">
-            <button class="button-menu-close" type="button">
+            <button class="button-menu-close" type="button" aria-label="Close navigation menu" autofocus>
                 <svg class="mod-modal-x" width="34" height="34">
                     <use href="./images/icons.svg#icon-close"></use>
                 </svg></button>
@@ -63,21 +63,21 @@
         <div class="mobile-social-container">
             <ul class="mob-social-list">
                 <li class="mob-social-item">
-                    <a class="mob-social-item-link" href="https://www.facebook.com/goITclub/" target="_blank">
+                    <a class="mob-social-item-link" href="https://www.facebook.com/goITclub/" target="_blank" aria-label="GoIT on Facebook">
                         <svg class="menu-svg" width="18" height="18">
                             <use href="./images/icons.svg#icon-facebook"></use>
                         </svg>
                     </a>
                 </li>
                 <li class="mob-social-item">
-                    <a class="mob-social-item-link" href="https://www.instagram.com/goitclub/" target="_blank">
+                    <a class="mob-social-item-link" href="https://www.instagram.com/goitclub/" target="_blank" aria-label="GoIT on Instagram">
                         <svg class="menu-svg" width="18" height="18">
                             <use href="./images/icons.svg#icon-instagram"></use>
                         </svg>
                     </a>
                 </li>
                 <li class="mob-social-item">
-                    <a class="mob-social-item-link" href="https://www.youtube.com/c/GoIT" target="_blank">
+                    <a class="mob-social-item-link" href="https://www.youtube.com/c/GoIT" target="_blank" aria-label="GoIT on YouTube">
                         <svg class="menu-svg" width="18" height="18">
                             <use href="./images/icons.svg#icon-youtube"></use>
                         </svg>
@@ -85,5 +85,5 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </dialog>
 </header>

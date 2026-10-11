@@ -65,7 +65,9 @@ Edit section content in `src/partials/` and its corresponding styles in `src/css
 
 This repository demonstrates page layout and responsive asset handling. It is not a complete online store: there is no cart, checkout, payment integration or server-side contact submission.
 
-The current `src/main.js` is empty. Mobile-menu markup and styles are present, but the open/close buttons are not wired to JavaScript in this version.
+The mobile navigation uses a native dialog with open/close buttons, Escape and backdrop dismissal, keyboard focus containment, and background scroll locking. Selecting a section closes the menu; switching to the desktop layout also closes it and restores scrolling.
+
+The team demo above is hosted from another contributor's repository. Changes to this fork do not automatically update that deployment; run this version locally or publish this fork to preview its menu fix.
 
 ## Publishing
 

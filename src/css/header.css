@@ -239,6 +239,13 @@
   position: fixed;
   top: 0;
   right: 0;
+  left: auto;
+  margin: 0;
+  border: 0;
+  max-width: 100vw;
+  max-height: none;
+  color: #fbfbfb;
+  background-color: #0c0c0c;
   width: 200px;
   height: 100%;
   visibility: hidden;
@@ -247,10 +254,28 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 999;
   overflow-y: auto;
   background-image: url(../images/menu-img-x1/menu-bg-img-mob-x1.png);
+}
+
+.mob-menu:not([open]) {
+  display: none;
+}
+
+.mob-menu::backdrop {
+  background: rgb(12 12 12 / 45%);
+}
+
+.menu-box,
+.mobile-social-container {
+  flex-shrink: 0;
+}
+
+.mob-menu :focus-visible {
+  outline: 2px solid #fbfbfb;
+  outline-offset: 4px;
 }
 
 .mobile-social-container {
