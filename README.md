@@ -2,7 +2,9 @@
 
 A team frontend project: a responsive watch-brand landing page built with HTML and CSS. It presents the brand, product collections, a featured offer, customer reviews and a contact section.
 
-[Team demo](https://nastjademchyk.github.io/WatchCharm-team-project/)
+[Live demo — maintained version](https://watchcharm-ochre.vercel.app/)
+
+This demo deploys from this repository and includes the mobile-navigation fix. The [original team demo](https://nastjademchyk.github.io/WatchCharm-team-project/) is hosted from another contributor's repository and may differ.
 
 ## Page sections
 
@@ -40,6 +42,7 @@ Open the local URL printed by Vite, normally [http://localhost:5173](http://loca
 | --- | --- |
 | `npm run dev` | Start the development server |
 | `npm run build` | Generate the site in `dist/` |
+| `npm run build:vercel` | Generate a build for the root of a Vercel domain |
 | `npm run preview` | Preview the generated build |
 
 The build command uses the base path `/WatchCharm-team-project/`. Use the URL printed by the preview server, including that path.
@@ -67,9 +70,11 @@ This repository demonstrates page layout and responsive asset handling. It is no
 
 The mobile navigation uses a native dialog with open/close buttons, Escape and backdrop dismissal, keyboard focus containment, and background scroll locking. Selecting a section closes the menu; switching to the desktop layout also closes it and restores scrolling.
 
-The team demo above is hosted from another contributor's repository. Changes to this fork do not automatically update that deployment; run this version locally or publish this fork to preview its menu fix.
+The maintained Vercel demo above includes these changes. Changes to this fork do not update the original team's GitHub Pages deployment.
 
 ## Publishing
+
+The Vercel project is connected to this repository's `main` branch. `vercel.json` configures Vite, `npm ci`, `npm run build:vercel`, and the `dist/` output directory. The app runs at the domain root; no environment variables are required for this static landing page.
 
 The existing workflow builds on pushes to `main` and publishes `dist/` to the `gh-pages` branch. GitHub Pages must be configured to serve that branch. If the repository name or hosting path changes, update the `--base` value in the build script.
 
